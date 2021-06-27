@@ -95,7 +95,37 @@ var chart = bb.generate({
   
   })
 
-  //graph4
+//graph4
+  
+  bb.generate({
+    bindto: "#graph4",
+    data: {
+        type: "bar",
+        json: {
+            "Notations par IMDb": dataGraph3.map(({ IMDB_Rating }) => IMDB_Rating),
+        }
+    },
+    axis: {
+        x: {
+            type: 'category',
+            categories: dataGraph3.map(({ Series_Title }) => Series_Title),
+        },
+        y: {
+            label: {
+                text: "Notation de IMDb sur 10",
+                position: "outer-middle"
+            }
+        },
+    },
+    bar: {
+      width: {
+        ratio: 2
+      }
+    },
+  
+  })
+
+  //graph5
   
   bb.generate({
     bindto: "#graph4",
